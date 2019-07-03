@@ -1,0 +1,8 @@
+#!/bin/bash
+FILE=$@
+TMP="/tmp/"
+FILE=${FILE/$TMP}
+
+docker run --rm --volume /tmp:/project  herloct/phpcs --standard=PSR1,PSR2 $FILE
+
+
